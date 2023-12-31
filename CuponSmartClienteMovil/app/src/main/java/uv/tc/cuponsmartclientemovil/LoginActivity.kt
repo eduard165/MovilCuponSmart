@@ -68,26 +68,31 @@ class LoginActivity : AppCompatActivity() {
 
         //Esta es la peticion al ws
         fun peticionLogin(correo_electronico: String, password: String) {
+            val jsonObject = JsonObject()
+            jsonObject.addProperty("correo_electronico", correo_electronico)
+            jsonObject.addProperty("password", password)
+
             Ion.getDefault(this@LoginActivity).conscryptMiddleware.enable(false)
             Ion.with(this@LoginActivity)
-                .load("POST", Constantes.URL_WS + "autenticacion/validacion/cliente")
-                .setHeader("Content-Type", "application/json")
-                //Json
-                .asString()
-                .setCallback { e, result ->
+                    .load("POST", Constantes.URL_WS + "autenticacion/validacion/cliente")
+                    .setHeader("Content-Type", "application/json")
+                    .setJsonObjectBody(jsonObject)
+                    .asString()
+                    .setCallback { e, result ->
 
-                    if (e == null && result != null) {
-                        serializarRespuestaLogin(result)
-                    } else {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            "Error en la petición",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        if (e == null && result != null) {
+                            serializarRespuestaLogin(result)
+                        } else {
+                            val errorMessage = e?.message ?: "Error desconocido"
+                            Toast.makeText(
+                                    this@LoginActivity,
+                                    "Error en la petición: $errorMessage",
+                                    Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                }
-
         }
+
         binding.btnIniciarSesion.setOnClickListener {
             val correo_electronico: String = binding.etCorreo.text.toString()
             val password: String = binding.etPassword.text.toString()
