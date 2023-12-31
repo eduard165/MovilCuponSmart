@@ -25,6 +25,7 @@ class RegistrarClienteActivity : AppCompatActivity() {
     private fun irPantallaPrincipal() {
         val intent = Intent(this@RegistrarClienteActivity,LoginActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 
