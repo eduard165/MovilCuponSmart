@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CuponSmartClienteMovil"
         tools:targetApi="31">
         <activity
+            android:name=".BusquedaEmpresaActivity"
+            android:exported="false" />
+        <activity
             android:name=".PromocionesActivity"
             android:exported="false" />
         <activity
