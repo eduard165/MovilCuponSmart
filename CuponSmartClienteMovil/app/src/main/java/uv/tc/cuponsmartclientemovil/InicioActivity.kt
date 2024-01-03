@@ -24,10 +24,11 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     lateinit var toolbarMenu: Toolbar
     lateinit var toggle: ActionBarDrawerToggle
 
-    lateinit var card_alimentos:CardView
-    lateinit var card_entretenimiento:CardView
-    lateinit var card_electronicos:CardView
-
+    lateinit var card_alimentos: CardView
+    lateinit var card_entretenimiento: CardView
+    lateinit var card_electronicos: CardView
+    lateinit var card_ropamoda: CardView
+    lateinit var card_hogar: CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,9 +42,6 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         navigationView = binding.navView
         navigationView.bringToFront()
         setSupportActionBar(toolbarMenu)
-
-
-
 
 
 
@@ -65,16 +63,15 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         card_alimentos = binding.cvAlimentos
 
         card_alimentos.setOnClickListener {
-            val intent = Intent(this@InicioActivity,PromocionesActivity::class.java)
+            val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
             startActivity(intent)
         }
     }
 
 
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_promos-> irMenuPrincipal()
+            R.id.nav_promos -> irMenuPrincipal()
             R.id.nav_perfil -> irEditarPerfil()
             R.id.nav_logout -> cerrarSesion()
         }
@@ -84,7 +81,7 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     private fun cerrarSesion() {
-        val intent = Intent(this@InicioActivity,LoginActivity::class.java)
+        val intent = Intent(this@InicioActivity, LoginActivity::class.java)
         startActivity(intent)
         finish()
     }
@@ -95,12 +92,14 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     fun irEditarPerfil() {
+        val cadenaJson = intent.getStringExtra("cliente")
         val intent = Intent(this@InicioActivity, EditarPerfilActivity::class.java)
+        intent.putExtra("cliente", cadenaJson)
         startActivity(intent)
 
     }
 
-    fun irBuscarPorEmpresa(){
+    fun irBuscarPorEmpresa() {
 
     }
 
@@ -119,7 +118,6 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         }
         return super.onOptionsItemSelected(item)
     }
-
 
 
 }

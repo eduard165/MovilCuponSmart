@@ -58,11 +58,7 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    fun irPantallaPrincipalMain() {
-        val intent = Intent(this@LoginActivity, InicioActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
+
 
     fun serializarRespuestaLogin(json:String) {
         val gson = Gson()

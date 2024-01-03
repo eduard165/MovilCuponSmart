@@ -9,14 +9,14 @@
 
     <EditText
         android:id="@+id/et_direccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="139dp"
+        android:layout_height="39dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="106dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="Dirección"
+        android:hint="Calle"
         android:inputType="text"
         android:textColor="#FDFCFC"
         android:textColorHint="#CCC2C2"
@@ -24,7 +24,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
@@ -44,10 +44,12 @@
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et_email"
@@ -166,37 +168,40 @@
 
     <EditText
         android:id="@+id/et_fechanacimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="189dp"
+        android:layout_height="54dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="date"
+        android:textColor="#FDFCFC"
+        android:textColorHint="#CCC2C2"
+        android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <Button
         android:id="@+id/btn_guardar_edicion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="52dp"
+        android:backgroundTint="#4867B6"
         android:fontFamily="@font/albertsans_bold"
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
-        android:backgroundTint="#83E22B"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toEndOf="@+id/btn_cancelar_edicion" />
 
     <Button
         android:id="@+id/btn_cancelar_edicion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginBottom="40dp"
-        android:backgroundTint="#83E22B"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="52dp"
+        android:backgroundTint="#4884B6"
         android:fontFamily="@font/albertsans_bold"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -211,5 +216,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile" />
+
+    <EditText
+        android:id="@+id/et_numero_calle"
+        android:layout_width="105dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.574" />
+
+    <ImageButton
+        android:id="@+id/btn_edicion"
+        android:layout_width="47dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
