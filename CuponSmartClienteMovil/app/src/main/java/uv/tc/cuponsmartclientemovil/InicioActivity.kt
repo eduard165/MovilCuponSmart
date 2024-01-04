@@ -114,6 +114,7 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_promos -> irMenuPrincipal()
             R.id.nav_perfil -> irEditarPerfil()
             R.id.nav_logout -> cerrarSesion()
+            R.id.nav_empresas -> irBuscarPorEmpresa()
         }
 
         drawerLayoutMenu.closeDrawer(GravityCompat.START)
@@ -140,6 +141,8 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     fun irBuscarPorEmpresa() {
+        val intent = Intent(this@InicioActivity, BusquedaPromocionesActivity::class.java)
+        startActivity(intent)
 
     }
 
