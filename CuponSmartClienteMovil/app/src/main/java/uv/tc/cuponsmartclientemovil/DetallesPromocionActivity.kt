@@ -3,9 +3,9 @@ package uv.tc.cuponsmartclientemovil
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class BusquedaEmpresaActivity : AppCompatActivity() {
+class DetallesPromocionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_busqueda_empresa)
+        setContentView(R.layout.activity_detalles_promocion)
     }
 }

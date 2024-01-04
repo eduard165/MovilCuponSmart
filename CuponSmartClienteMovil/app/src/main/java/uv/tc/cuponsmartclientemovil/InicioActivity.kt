@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import uv.tc.cuponsmartclientemovil.databinding.ActivityInicioBinding
+import uv.tc.cuponsmartclientemovil.poko.Promocion
 
 class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,6 +27,7 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
     lateinit var card_alimentos: CardView
     lateinit var card_entretenimiento: CardView
+    lateinit var card_viajes:CardView
     lateinit var card_electronicos: CardView
     lateinit var card_ropamoda: CardView
     lateinit var card_hogar: CardView
@@ -62,8 +64,46 @@ class InicioActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         card_alimentos = binding.cvAlimentos
 
+        card_entretenimiento = binding.cvEntretenimiento
+        card_viajes = binding.cvViajes
+        card_hogar = binding.cvHogar
+        card_ropamoda = binding.cvRopaModa
+        card_electronicos = binding.cvElectronica
+
         card_alimentos.setOnClickListener {
+           val idCategoria = 1
             val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
+            intent.putExtra("idCategoria", idCategoria)
+            startActivity(intent)
+        }
+        card_entretenimiento.setOnClickListener {
+            val idCategoria = 2
+            val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
+            intent.putExtra("idCategoria", idCategoria)
+            startActivity(intent)
+        }
+        card_viajes.setOnClickListener {
+            val idCategoria = 3
+            val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
+            intent.putExtra("idCategoria", idCategoria)
+            startActivity(intent)
+        }
+        card_ropamoda.setOnClickListener {
+            val idCategoria = 4
+            val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
+            intent.putExtra("idCategoria", idCategoria)
+            startActivity(intent)
+        }
+        card_hogar.setOnClickListener {
+            val idCategoria = 5
+            val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
+            intent.putExtra("idCategoria", idCategoria)
+            startActivity(intent)
+        }
+        card_electronicos.setOnClickListener {
+            val idCategoria = 6
+            val intent = Intent(this@InicioActivity, PromocionesActivity::class.java)
+            intent.putExtra("idCategoria", idCategoria)
             startActivity(intent)
         }
     }

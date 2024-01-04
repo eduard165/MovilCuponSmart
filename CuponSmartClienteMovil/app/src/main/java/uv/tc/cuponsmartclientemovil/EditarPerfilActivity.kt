@@ -107,7 +107,8 @@ class EditarPerfilActivity : AppCompatActivity() {
             .setCallback { e, result ->
                 if (e == null && result != null) {
                     verificarEdicion(result)
-                    println(result.toString())
+                    finish();
+                    startActivity(getIntent());
 
                 } else {
                     Toast.makeText(

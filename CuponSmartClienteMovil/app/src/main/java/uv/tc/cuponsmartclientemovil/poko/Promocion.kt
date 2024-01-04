@@ -13,5 +13,8 @@ class Promocion {
     var empresa_rfc:String=""
     var id_categoria:Int=0
     var id_estatus:Int=0
+    var nombre_empresa:String = ""
+    var nombre_tipo:String = ""
+    var usos_disponibles:Int = 0
 
 }

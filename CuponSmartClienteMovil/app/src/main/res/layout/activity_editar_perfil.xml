@@ -9,11 +9,8 @@
 
     <EditText
         android:id="@+id/et_direccion"
-        android:layout_width="139dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="106dp"
+        android:layout_width="161dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:hint="Calle"
@@ -23,15 +20,17 @@
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
 
     <EditText
         android:id="@+id/et_contrasena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="235dp"
+        android:layout_height="63dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="92dp"
         android:layout_marginEnd="106dp"
@@ -46,7 +45,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email"
         app:layout_constraintVertical_bias="0.0" />
@@ -168,8 +167,8 @@
 
     <EditText
         android:id="@+id/et_fechanacimiento"
-        android:layout_width="189dp"
-        android:layout_height="54dp"
+        android:layout_width="200dp"
+        android:layout_height="51dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:inputType="date"
@@ -178,15 +177,16 @@
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <Button
         android:id="@+id/btn_guardar_edicion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="#4867B6"
         android:fontFamily="@font/albertsans_bold"
         android:text="Guardar"
@@ -199,8 +199,8 @@
         android:id="@+id/btn_cancelar_edicion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="#4884B6"
         android:fontFamily="@font/albertsans_bold"
         android:text="Cancelar"
@@ -219,16 +219,16 @@
 
     <EditText
         android:id="@+id/et_numero_calle"
-        android:layout_width="105dp"
-        android:layout_height="38dp"
+        android:layout_width="116dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintVertical_bias="0.581" />
 
     <ImageButton
         android:id="@+id/btn_edicion"
