@@ -15,6 +15,7 @@ import com.koushikdutta.ion.Ion
 import uv.tc.cuponsmartclientemovil.interfaces.NotificarClick
 import uv.tc.cuponsmartclientemovil.poko.Promocion
 import uv.tc.cuponsmartclientemovil.util.Constantes
+import java.util.Locale
 
 class BusquedaPromocionesActivity : AppCompatActivity(), NotificarClick {
 
@@ -22,18 +23,53 @@ class BusquedaPromocionesActivity : AppCompatActivity(), NotificarClick {
     private lateinit var searchView: SearchView
     private var id_estatus:Int = 0
     private var id_promocion:Int =0
-    private var listaPromociones:ArrayList<Promocion> = ArrayList()
+    private var listaPromociones = ArrayList<Promocion>()
+    private lateinit var adaptador:PromocionAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_busqueda_empresa)
 
         recyclerView = findViewById(R.id.rv_promos)
-        searchView = findViewById(R.id.sv_buscar)
+        searchView = findViewById(R.id.buscar)
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
         consultarPromocionesDisponibles(id_estatus)
+        recyclerView.adapter = adaptador
 
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+        })
+
+    }
+
+
+
+   
+
+    private fun filterList(query: String?) {
+
+        if (query != null) {
+            val filteredList = ArrayList<Promocion>()
+            for (i in listaPromociones) {
+                if (i.nombre_empresa.lowercase(Locale.ROOT).contains(query)) {
+                    filteredList.add(i)
+                }
+            }
+
+            if (filteredList.isEmpty()) {
+                Toast.makeText(this, "No Data found", Toast.LENGTH_SHORT).show()
+            } else {
+                adaptador.setFilteredList(filteredList)
+            }
+        }
     }
 
     private fun consultarPromocionesDisponibles(id_estatus: Int) {

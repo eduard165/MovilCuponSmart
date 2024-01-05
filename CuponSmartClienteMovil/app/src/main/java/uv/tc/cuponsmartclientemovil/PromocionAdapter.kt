@@ -1,7 +1,5 @@
 package uv.tc.cuponsmartclientemovil
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +9,20 @@ import androidx.recyclerview.widget.RecyclerView
 import uv.tc.cuponsmartclientemovil.interfaces.NotificarClick
 import uv.tc.cuponsmartclientemovil.poko.Promocion
 
-class PromocionAdapter(val promociones :ArrayList<Promocion>,
+class PromocionAdapter(var promociones :ArrayList<Promocion>,
                        val observador :NotificarClick) : RecyclerView
                            .Adapter<PromocionAdapter.ViewHolderPromociones>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPromociones {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_list_promociones,parent, false)
         return ViewHolderPromociones(itemView)
     }
+
+    fun setFilteredList(listaPromociones: ArrayList<Promocion>) {
+        this.promociones = promociones
+        notifyDataSetChanged()
+    }
+
+
 
     override fun getItemCount(): Int {
         return promociones.size
